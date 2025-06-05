@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import xlwings as xw
+from openpyxl import load_workbook
 from PIL import Image
 
 st.header('Estimez le matériau le plus éco-responsable pour votre projet')
@@ -30,13 +30,15 @@ distance2 = st.text_input(
 
 
 if st.button("Valider"):
-    fichier = xw.Book("Calcul_GWP.xlsx")
-    fichier = fichier.sheets[0]
+    fichier = load_workbook("Calcul_GWP.xlsx")
+    fichier = fichier.active  
 
     fichier.range("A33").value = section1
     fichier.range("A35").value = distance1
     fichier.range("G33").value = section2
     fichier.range("G35").value = distance2
+    
+    fichier.save("Calcul_GWP.xlsx")
 
     materiau = fichier.range("E47").value
     GWP1 = round(fichier.range("D43").value, 2)
