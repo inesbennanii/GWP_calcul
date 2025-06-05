@@ -19,7 +19,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.header('Estimez le matériau le plus éco-responsable pour votre projet')
+st.header(':#4D5D48[Estimez le matériau le plus éco-responsable pour votre projet]')
 
 section1 = st.selectbox("Choisissez la section pour l'aluminium :", (25,35,50,70,95, 120, 150, 185,240,300,400,500,630))
 distance1 = st.text_input("Distance pour l'aluminium :", value="1")
