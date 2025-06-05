@@ -15,15 +15,12 @@ if st.button("Valider"):
     section2 = int(section2)
     distance2 = int(distance2)
 
-    # Poids
     poids1 = {50: 225, 120: 470, 150: 590, 185: 713}.get(section1, 0)
     poids2 = {50: 493, 120: 1178, 150: 1428, 185: 1786}.get(section2, 0)
 
-    # Masse
     masse_totale1 = poids1 * distance1
     masse_totale2 = poids2 * distance2
 
-    # Coefficients B et C
     if poids1 > 425.5:
         B39, C39 = 4.1, 24.3
     else:
