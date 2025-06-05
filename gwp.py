@@ -19,12 +19,35 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.header(':#4D5D48[Estimez le matériau le plus éco-responsable pour votre projet]')
+st.markdown(
+    "<h1 style='color: #4D5D48;'>Estimez le matériau le plus éco-responsable pour votre projet</h1>",
+    unsafe_allow_html=True
+)
 
-section1 = st.selectbox("Choisissez la section pour l'aluminium :", (25,35,50,70,95, 120, 150, 185,240,300,400,500,630))
-distance1 = st.text_input("Distance pour l'aluminium :", value="1")
-section2 = st.selectbox("Choisissez la section pour le cuivre :", (25,35,50,70,95, 120, 150, 185,240,300,400,500,630))
-distance2 = st.text_input("Distance pour le cuivre :", value="1")
+st.markdown(
+    "<span style='color: #4D5D48; font-size: 18px;'>Choisissez la section pour l'aluminium :</span>",
+    unsafe_allow_html=True
+)
+section1 = st.selectbox("", (25, 35, 50, 70, 95, 120, 150, 185, 240, 300, 400, 500, 630))
+
+st.markdown(
+    "<span style='color: #4D5D48; font-size: 18px;'>Distance pour l'aluminium :</span>",
+    unsafe_allow_html=True
+)
+distance1 = st.text_input("", value="1")
+
+st.markdown(
+    "<span style='color: #4D5D48; font-size: 18px;'>Choisissez la section pour le cuivre :</span>",
+    unsafe_allow_html=True
+)
+section2 = st.selectbox("", (25, 35, 50, 70, 95, 120, 150, 185, 240, 300, 400, 500, 630))
+
+st.markdown(
+    "<span style='color: #4D5D48; font-size: 18px;'>Distance pour le cuivre :</span>",
+    unsafe_allow_html=True
+)
+distance2 = st.text_input("", value="1")
+
 
 if st.button("Valider"):
 
@@ -87,5 +110,8 @@ if st.button("Valider"):
     GWP2 = round(total2, 2)
 
     st.success(f"Le matériau à utiliser est **{materiau}**")
-    st.metric(label="Total GWP de l'aluminium", value=f"{GWP1} kg CO₂")
-    st.metric(label="Total GWP du cuivre", value=f"{GWP2} kg CO₂")
+    st.markdown(f"**Total GWP de l'aluminium**")
+    st.metric(label="", value=f"{GWP1} kg CO₂")
+    st.markdown(f"**Total GWP du cuivre**")
+    st.metric(label="", value=f"{GWP2} kg CO₂")
+
