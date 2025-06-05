@@ -49,11 +49,11 @@ if st.button("Valider"):
         poids2 = 1786
 
 
-    masse_totale1 = poids1 * distance1
-    masse_totale2 = poids2 * distance2
+    masse_totale1 = int(poids1) * int(distance1)
+    masse_totale2 = int(poids2) * int(distance2)
 
 
-    if poids1 > 425.5:
+    if masse_totale1 > 425.5:
         B39 = 4.1
         C39 = 24.3
     else:
@@ -71,14 +71,14 @@ if st.button("Valider"):
     C42 = ws["C42"].value
 
 
-    fab1 = B39 * masse_totale1 + C39
-    distrib1 = B40 * masse_totale1 + C40
-    installation1 = B41 * masse_totale1 + C41
-    fdv1 = B42 * masse_totale1 + C42
+    fab1 = float(B39) * float(masse_totale1) + float(C39)
+    distrib1 = float(B40) * float(masse_totale1) + float(C40)
+    installation1 = float(B41) * float(masse_totale1) + float(C41)
+    fdv1 = float(B42) * float(masse_totale1) + float(C42)
     total1 = fab1 + distrib1 + installation1 + fdv1
 
 
-    if poids2 > 2049.5:
+    if masse_totale2 > 2049.5:
         H39 = 2.28
         I39 = -289
     else:
@@ -93,10 +93,10 @@ if st.button("Valider"):
     I42 = ws["I42"].value
 
 
-    fab2 = H39 * masse_totale2 + I39
-    distrib2 = H40 * masse_totale2 + I40
-    installation2 = H41 * masse_totale2 + I41
-    fdv2 = H42 * masse_totale2 + I42
+    fab2 = float(H39) * float(masse_totale2) + float(I39)
+    distrib2 = float(H40) * float(masse_totale2) + float(I40)
+    installation2 = float(H41) * float(masse_totale2) + float(I41)
+    fdv2 = float(H42) * float(masse_totale2) + float(I42)
     total2 = fab2 + distrib2 + installation2 + fdv2
 
     
@@ -111,3 +111,6 @@ if st.button("Valider"):
     st.success(f"Le matériau à utiliser est **{materiau}**")
     st.metric(label="Total GWP de l'aluminium", value=f"{GWP1} kg CO₂")
     st.metric(label="Total GWP du cuivre", value=f"{GWP2} kg CO₂")
+    st.metric(label="Total GWP de l'aluminium", value=f"{B39} kg CO₂")
+    st.metric(label="Total GWP du cuivre", value=f"{C39} kg CO₂")
+
