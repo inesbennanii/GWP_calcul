@@ -113,7 +113,5 @@ if st.button("Valider"):
     GWP2 = round(total2, 2)
 
     st.success(f"Le matériau à utiliser est **{materiau}**")
-    st.markdown(f"**Total GWP de l'aluminium**")
-    st.metric(label="", value=f"{GWP1} kg CO₂")
-    st.markdown(f"**Total GWP du cuivre**")
-    st.metric(label="", value=f"{GWP2} kg CO₂")
+    st.metric(label="Total GWP de l'aluminium", value=f"{GWP1} kg CO₂")
+    st.metric(label="Total GWP du cuivre", value=f"{GWP2} kg CO₂")
