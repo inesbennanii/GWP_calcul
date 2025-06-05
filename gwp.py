@@ -1,7 +1,24 @@
 import streamlit as st
 from openpyxl import load_workbook
+import base64
 
-st.image("suss.jpg", caption="Sunrise by the mountains")
+def get_base64(file):
+    with open(file, "rb") as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+encoded_image = get_base64("suss.jpg")
+st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url("data:image/jpg;base64,{encoded_image}");
+        background-size: cover;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 st.header('Estimez le matériau le plus éco-responsable pour votre projet')
 
 section1 = st.selectbox("Choisissez la section pour l'aluminium :", (25,35,50,70,95, 120, 150, 185,240,300,400,500,630))
