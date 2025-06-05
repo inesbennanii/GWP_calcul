@@ -7,7 +7,7 @@ def get_base64(file):
         data = f.read()
     return base64.b64encode(data).decode()
 
-encoded_image = get_base64("suss22")
+encoded_image = get_base64("suss22.jpg")
 st.markdown(
     f"""
     <style>
