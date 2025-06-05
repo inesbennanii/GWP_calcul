@@ -19,36 +19,39 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+
 st.markdown(
     "<h1 style='color: #4D5D48;'>Estimez le matériau le plus éco-responsable pour votre projet</h1>",
     unsafe_allow_html=True
 )
 
+
 st.markdown(
     "<span style='color: #4D5D48; font-size: 18px;'>Choisissez la section pour l'aluminium :</span>",
     unsafe_allow_html=True
 )
-section1 = st.selectbox("", (25, 35, 50, 70, 95, 120, 150, 185, 240, 300, 400, 500, 630))
+section1 = st.selectbox("", (25, 35, 50, 70, 95, 120, 150, 185, 240, 300, 400, 500, 630), key="section1")
 
 st.markdown(
     "<span style='color: #4D5D48; font-size: 18px;'>Distance pour l'aluminium :</span>",
     unsafe_allow_html=True
 )
-distance1 = st.text_input("", value="1")
+distance1 = st.text_input("", value="1", key="distance1")
 
 st.markdown(
     "<span style='color: #4D5D48; font-size: 18px;'>Choisissez la section pour le cuivre :</span>",
     unsafe_allow_html=True
 )
-section2 = st.selectbox("", (25, 35, 50, 70, 95, 120, 150, 185, 240, 300, 400, 500, 630))
+section2 = st.selectbox("", (25, 35, 50, 70, 95, 120, 150, 185, 240, 300, 400, 500, 630), key="section2")
 
 st.markdown(
     "<span style='color: #4D5D48; font-size: 18px;'>Distance pour le cuivre :</span>",
     unsafe_allow_html=True
 )
-distance2 = st.text_input("", value="1")
+distance2 = st.text_input("", value="1", key="distance2")
 
-
+# Calculs
 if st.button("Valider"):
 
     section1 = int(section1)
@@ -56,7 +59,7 @@ if st.button("Valider"):
     section2 = int(section2)
     distance2 = int(distance2)
     
-    poids1 = {25: 140, 35: 173, 50: 225,70: 296, 95: 385, 120: 470, 150: 590, 185: 713, 240: 905, 300: 1118, 400: 1446, 500: 1785, 630: 2294}.get(section1, 0)
+    poids1 = {25: 140, 35: 173, 50: 225, 70: 296, 95: 385, 120: 470, 150: 590, 185: 713, 240: 905, 300: 1118, 400: 1446, 500: 1785, 630: 2294}.get(section1, 0)
     poids2 = {25: 277, 35: 372, 50: 493, 70: 685, 95: 933, 120: 1178, 150: 1428, 185: 1786, 240: 2289, 300: 2899, 400: 3715, 500: 4942, 630: 6234}.get(section2, 0)
 
     masse_totale1 = poids1 * distance1
@@ -114,4 +117,3 @@ if st.button("Valider"):
     st.metric(label="", value=f"{GWP1} kg CO₂")
     st.markdown(f"**Total GWP du cuivre**")
     st.metric(label="", value=f"{GWP2} kg CO₂")
-
