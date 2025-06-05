@@ -1,7 +1,6 @@
 import streamlit as st
 from openpyxl import load_workbook
 
-st.image("sus1.jpg", caption="Sustainable Development")
 st.header('Estimez le matériau le plus éco-responsable pour votre projet')
 
 section1 = st.selectbox("Choisissez la section pour l'aluminium :", (25,35,50,70,95, 120, 150, 185,240,300,400,500,630))
