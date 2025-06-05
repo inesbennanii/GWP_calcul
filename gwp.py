@@ -1,22 +1,23 @@
 import streamlit as st
 from openpyxl import load_workbook
 
+st.image("sus1.jpg", caption="Sustainable Development")
 st.header('Estimez le matériau le plus éco-responsable pour votre projet')
 
-section1 = st.selectbox("Choisissez la section pour l'aluminium :", (50, 120, 150, 185))
+section1 = st.selectbox("Choisissez la section pour l'aluminium :", (25,35,50,70,95, 120, 150, 185,240,300,400,500,630))
 distance1 = st.text_input("Distance pour l'aluminium :", value="1")
-section2 = st.selectbox("Choisissez la section pour le cuivre :", (50, 120, 150, 185))
+section2 = st.selectbox("Choisissez la section pour le cuivre :", (25,35,50,70,95, 120, 150, 185,240,300,400,500,630))
 distance2 = st.text_input("Distance pour le cuivre :", value="1")
 
 if st.button("Valider"):
-    # Conversion
+
     section1 = int(section1)
     distance1 = int(distance1)
     section2 = int(section2)
     distance2 = int(distance2)
-
-    poids1 = {50: 225, 120: 470, 150: 590, 185: 713}.get(section1, 0)
-    poids2 = {50: 493, 120: 1178, 150: 1428, 185: 1786}.get(section2, 0)
+    
+    poids1 = {25: 140, 35: 173, 50: 225,70: 296, 95: 385, 120: 470, 150: 590, 185: 713, 240: 905, 300: 1118, 400: 1446, 500: 1785, 630: 2294}.get(section1, 0)
+    poids2 = {25: 277, 35: 372, 50: 493, 70: 685, 95: 933, 120: 1178, 150: 1428, 185: 1786, 240: 2289, 300: 2899, 400: 3715, 500: 4942, 630: 6234}.get(section2, 0)
 
     masse_totale1 = poids1 * distance1
     masse_totale2 = poids2 * distance2
