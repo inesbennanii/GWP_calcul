@@ -191,7 +191,7 @@ if selected == 'Cellules':
         unsafe_allow_html=True
         )  
     
-    section1 = st.selectbox("", (TH1, TH2, TH4, TH5, TH6, TH7), key="section1")
+    section1 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="section1")
     
     if st.button("Ajouter une cellule"):
         st.markdown(
@@ -199,7 +199,7 @@ if selected == 'Cellules':
             unsafe_allow_html=True
             )  
     
-        section1 = st.selectbox("", (TH1, TH2, TH4, TH5, TH6, TH7), key="section1")
+        section1 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="section1")
         
         if st.button("Ajouter une cellule"):
             st.markdown(
@@ -207,7 +207,7 @@ if selected == 'Cellules':
                 unsafe_allow_html=True
                 )  
     
-            section1 = st.selectbox("", (TH1, TH2, TH4, TH5, TH6, TH7), key="section1")
+            section1 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="section1")
             
             if st.button("Ajouter une cellule"):
                 st.markdown(
@@ -215,7 +215,7 @@ if selected == 'Cellules':
                     unsafe_allow_html=True
                     )  
     
-                section1 = st.selectbox("", (TH1, TH2, TH4, TH5, TH6, TH7), key="section1")
+                section1 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="section1")
                 
                 if st.button("Ajouter une cellule"):
                     st.markdown(
@@ -223,7 +223,7 @@ if selected == 'Cellules':
                         unsafe_allow_html=True
                         )  
     
-                    section1 = st.selectbox("", (TH1, TH2, TH4, TH5, TH6, TH7), key="section1")
+                    section1 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="section1")
                     
                     if st.button("Ajouter une cellule"):
                         st.markdown(
@@ -231,7 +231,7 @@ if selected == 'Cellules':
                             unsafe_allow_html=True
                             )  
     
-                        section1 = st.selectbox("", (TH1, TH2, TH4, TH5, TH6, TH7), key="section1")
+                        section1 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="section1")
                         
                         if st.button("Ajouter une cellule"):
                             st.markdown(
@@ -239,13 +239,12 @@ if selected == 'Cellules':
                                 unsafe_allow_html=True
                                 )  
     
-                            section1 = st.selectbox("", (TH1, TH2, TH4, TH5, TH6, TH7), key="section1")
-
+                            section1 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="section1")
     if st.button("Valider"):
 
         section1 = int(section1)
     
-        types = {TH1: 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1', TH2: 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1', TH4: 'SM AirSeT - DMVLS - CDTS - MX220 - 20kV - IAC 12,5 kA 1s AFL - verr. C4 - VIP45', TH5: 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1', TH6: 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1', TH7: 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1' }.get(section1, 0)
+        types = {'TH1': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1', 'TH2': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1', 'TH4': 'SM AirSeT - DMVLS - CDTS - MX220 - 20kV - IAC 12,5 kA 1s AFL - verr. C4 - VIP45', 'TH5': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1', 'TH6': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1', 'TH7': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1' }.get(section1, 0)
         
         GWP1= 899
 
