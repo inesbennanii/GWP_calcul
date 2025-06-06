@@ -54,14 +54,14 @@ distance2 = st.text_input("", value="1", key="distance2")
 if st.button("Valider"):
 
     section1 = int(section1)
-    distance1 = float(distance1)/0.001
+    distance1 = float(distance1)
     section2 = int(section2)
     distance2 = float(distance2)/0.001
     
     poids1 = {25: 140, 35: 173, 50: 225, 70: 296, 95: 385, 120: 470, 150: 590, 185: 713, 240: 905, 300: 1118, 400: 1446, 500: 1785, 630: 2294}.get(section1, 0)
     poids2 = {25: 277, 35: 372, 50: 493, 70: 685, 95: 933, 120: 1178, 150: 1428, 185: 1786, 240: 2289, 300: 2899, 400: 3715, 500: 4942, 630: 6234}.get(section2, 0)
 
-    masse_totale1 = poids1 * distance1
+    masse_totale1 = (poids1 * distance1)/0.001
     masse_totale2 = poids2 * distance2
 
     if poids1 > 425.5:
