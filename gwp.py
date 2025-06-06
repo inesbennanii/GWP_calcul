@@ -185,7 +185,7 @@ if selected == 'Cellules':
         unsafe_allow_html=True
         )
     
-        
+    cellules_selectionnees=[]
     if "cellule_count" not in st.session_state:
         st.session_state.cellule_count = 1
     if st.button("Ajouter une cellule"):
