@@ -184,68 +184,32 @@ if selected == 'Cellules':
         "<h1 style='color: #4D5D48;'>Estimez le bilan carbone de vos cellules</h1>",
         unsafe_allow_html=True
         )
-
-
-    st.markdown(
-        "<span style='color: #4D5D48; font-size: 18px;'>Choisissez la section pour l'aluminium :</span>",
-        unsafe_allow_html=True
-        )  
     
-    section1 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="section1")
-    
-    if st.button("Ajouter une cellule"):
-        st.markdown(
-            "<span style='color: #4D5D48; font-size: 18px;'>Choisissez la section pour l'aluminium :</span>",
-            unsafe_allow_html=True
-            )  
-    
-        section1 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="section1")
         
-        if st.button("Ajouter une cellule"):
-            st.markdown(
-                "<span style='color: #4D5D48; font-size: 18px;'>Choisissez la section pour l'aluminium :</span>",
-                unsafe_allow_html=True
-                )  
+    if "cellule_count" not in st.session_state:
+        st.session_state.cellule_count = 1
+    if st.button("Ajouter une cellule"):
+        st.session_state.cellule_count += 1
+    for i in range(st.session_state.cellule_count):
+        section = st.selectbox(
+            f"Choisissez la cellule n°{i+1} :", 
+            ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), 
+            key=f"cellule_{i}"
+        )
+        cellules_selectionnees.append(section)
+
     
-            section1 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="section1")
-            
-            if st.button("Ajouter une cellule"):
-                st.markdown(
-                    "<span style='color: #4D5D48; font-size: 18px;'>Choisissez la section pour l'aluminium :</span>",
-                    unsafe_allow_html=True
-                    )  
-    
-                section1 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="section1")
-                
-                if st.button("Ajouter une cellule"):
-                    st.markdown(
-                        "<span style='color: #4D5D48; font-size: 18px;'>Choisissez la section pour l'aluminium :</span>",
-                        unsafe_allow_html=True
-                        )  
-    
-                    section1 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="section1")
-                    
-                    if st.button("Ajouter une cellule"):
-                        st.markdown(
-                            "<span style='color: #4D5D48; font-size: 18px;'>Choisissez la section pour l'aluminium :</span>",
-                            unsafe_allow_html=True
-                            )  
-    
-                        section1 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="section1")
-                        
-                        if st.button("Ajouter une cellule"):
-                            st.markdown(
-                                "<span style='color: #4D5D48; font-size: 18px;'>Choisissez la section pour l'aluminium :</span>",
-                                unsafe_allow_html=True
-                                )  
-    
-                            section1 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="section1")
+
     if st.button("Valider"):
 
         section1 = str(section1)
     
         types = {'TH1': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1', 'TH2': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1', 'TH4': 'SM AirSeT - DMVLS - CDTS - MX220 - 20kV - IAC 12,5 kA 1s AFL - verr. C4 - VIP45', 'TH5': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1', 'TH6': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1', 'TH7': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1' }.get(section1, 0)
-        
+
+        st.write("Vous avez sélectionné les cellules suivantes :")
+        for idx, cell in enumerate(cellules_selectionnees, start=1):
+            st.write(f"Cellule {idx} : {cell}")
+            
         GWP1= 899
 
         st.metric(label="Total GWP du transformeur séléctionné", value=f"{GWP1} kg CO₂")
