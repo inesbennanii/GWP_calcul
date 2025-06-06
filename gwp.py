@@ -102,8 +102,12 @@ if st.button("Valider"):
     distrib2 = H40 * masse_totale2 + I40
     installation2 = H41 * masse_totale2 + I41
     fdv2 = H42 * masse_totale2 + I42
-    total2 = fab2 + distrib2 + installation2 + fdv2
 
+    if poids2==1786:
+        total2= distance2*4370
+    else:
+        total2 = fab2 + distrib2 + installation2 + fdv2
+    
     if total1 > total2:
         materiau = 'le cuivre'
     else:
