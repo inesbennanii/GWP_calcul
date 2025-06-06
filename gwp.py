@@ -184,8 +184,29 @@ if selected == 'Cellules':
         "<h1 style='color: #4D5D48;'>Estimez le bilan carbone de vos cellules</h1>",
         unsafe_allow_html=True
         )
-    
+    i=1
     cellules_selectionnees=[]
+    section1 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="cellule{i}")
+    if st.button("Ajouter une cellule"):
+        i+=1
+        section2 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="cellule{i+1}")
+        cellules_selectionnees.append(section2)
+        if st.button("Ajouter une cellule"):
+            i+=1
+            section3 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="cellule{i+1}")
+            cellules_selectionnees.append(section3)
+            if st.button("Ajouter une cellule"):
+                i+=1
+                section4 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="cellule{i+1}")
+                cellules_selectionnees.append(section4)
+                if st.button("Ajouter une cellule"):
+                    i+=1
+                    section5 = st.selectbox("", ('TH1', 'TH2', 'TH4', 'TH5', 'TH6', 'TH7'), key="cellule{i+1}")
+                    cellules_selectionnees.append(section5)
+        
+
+
+    
     if "cellule_count" not in st.session_state:
         st.session_state.cellule_count = 1
 
