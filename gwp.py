@@ -197,9 +197,11 @@ if selected == 'Cellules':
         )
         return section
 
+    
     if st.button("Ajouter une cellule"):
         st.session_state.cellule_count += 1
 
+    cellules_selectionnees=[]
     for i in range(st.session_state.cellule_count):
         section = ajout(i)
         cellules_selectionnees.append(section)
