@@ -188,8 +188,7 @@ if selected == 'Cellules':
     cellules_selectionnees=[]
     if "cellule_count" not in st.session_state:
         st.session_state.cellule_count = 1
-    if st.button("Ajouter une cellule"):
-        st.session_state.cellule_count += 1
+
     for i in range(st.session_state.cellule_count):
         section = st.selectbox(
             f"Choisissez la cellule n°{i+1} :", 
@@ -197,6 +196,8 @@ if selected == 'Cellules':
             key=f"cellule_{i}"
         )
         cellules_selectionnees.append(section)
+    if st.button("Ajouter une cellule"):
+        st.session_state.cellule_count += 1
 
     
 
