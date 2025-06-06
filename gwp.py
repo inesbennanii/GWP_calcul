@@ -207,8 +207,8 @@ if selected == 'Cellules':
         types = {'TH1': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1', 'TH2': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1', 'TH4': 'SM AirSeT - DMVLS - CDTS - MX220 - 20kV - IAC 12,5 kA 1s AFL - verr. C4 - VIP45', 'TH5': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1', 'TH6': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1', 'TH7': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1' }.get(section1, 0)
 
         st.write("Vous avez sélectionné les cellules suivantes :")
-        for idx, cell in enumerate(cellules_selectionnees, start=1):
-            st.write(f"Cellule {idx} : {cell}")
+        for x, y in enumerate(cellules_selectionnees, start=1):
+            st.write(f"Cellule {x} : {y}")
             
         GWP1= 899
 
