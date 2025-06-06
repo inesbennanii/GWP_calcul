@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from openpyxl import load_workbook
 from PIL import Image
+import base64
 from streamlit_option_menu import option_menu
 
 def get_base64(file):
