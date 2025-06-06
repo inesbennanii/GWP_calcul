@@ -22,24 +22,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-def get_base64(file):
-    with open(file, "rb") as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
-
-encoded_image = get_base64("suss22.jpg")
-st.markdown(
-    f"""
-    <style>
-    .stApp {{
-        background-image: url("data:image/jpg;base64,{encoded_image}");
-        background-size: cover;
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 selected = option_menu(
     menu_title= None,
     options= ['Cables', 'Transformateurs'],
