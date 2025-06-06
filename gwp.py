@@ -196,10 +196,8 @@ if selected == 'Cellules':
             key=f"cellule_{i}"
         )
         cellules_selectionnees.append(section)
-    if st.button("Ajouter une cellule"):
-        st.session_state.cellule_count += 1
-
-    
+        if st.button("Ajouter une cellule"):
+            st.session_state.cellule_count += 1
 
     if st.button("Valider"):
 
