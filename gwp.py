@@ -232,6 +232,8 @@ if selected_menu=='Calcul GWP':
 
         if 'cellules' not in st.session_state:
             st.session_state.cellules = []
+        if 'total' not in st.session_state:
+            st.session_state.total =0
         cols = st.columns(2)
         if cols[0].button("Ajouter une cellule"):
             st.session_state.cellules.append({'type': 'TH1'})
@@ -247,8 +249,9 @@ if selected_menu=='Calcul GWP':
             )
 
         if st.session_state.cellules and st.button("Valider"):
+            st.session_state.total =0
             for x in st.session_state.cellules:
-                if x=={'type': 'TH1'}:
+                if x['type']== 'TH4':
                     st.session_state.total+=8460
                 else:
                     st.session_state.total+=899
