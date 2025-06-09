@@ -247,7 +247,12 @@ if selected_menu=='Calcul GWP':
             )
 
         if st.session_state.cellules and st.button("Valider"):
-            GWP4 = 899*len(st.session_state.cellules)
+            for x in st.session_state.cellules:
+                if x=={'type': 'TH1'}:
+                    st.session_state.total+=8460
+                else:
+                    st.session_state.total+=899
+            GWP4 = st.session_state.total
             st.session_state.GWP4 = GWP4
         
             st.subheader("Cellules sélectionnées")
