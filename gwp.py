@@ -223,13 +223,11 @@ if selected_menu=='Calcul GWP':
         types = {
             'TH1': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1',
             'TH2': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1',
-            'TH4': 'SM AirSeT - DMVLS - CDTS - MX220 - 20kV - IAC 12,5 kA 1s AFL - verr. C4 - VIP45',
+            'TH4': 'SM6-24 DM1A - Air Insulated Switchgear with SF6 breaking technology',
             'TH5': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1',
             'TH6': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1',
             'TH7': 'SM AirSeT 24kV - IM375 - IAC 12,5kA 1s AFL CD2 motorisée 48Vcc verrouillage P1'
         }
-
-
         if 'cellules' not in st.session_state:
             st.session_state.cellules = []
         if 'total' not in st.session_state:
