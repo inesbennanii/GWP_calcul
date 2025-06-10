@@ -350,46 +350,117 @@ if selected_menu=='Calcul GWP':
             unsafe_allow_html=True
             )  
         
-        section1 = st.selectbox("", ('CSAP-P725-7 POSTE HT','Coffret2'), key="section1")
+        section1 = st.selectbox("", ('CSAP POSTE HT','CSAP POSTE TGBT',"COFFRET D'ISOLEMENT 125A"), key="section1")
 
         section1 = str(section1)
-        Fabrication1 = {'COFFRET PRISMASet G IP30 H:1080 L:600 P:205': 255, 'PORTE PLEINE': 255, 'BLOC INSERT TYPE PAPILLON': 255, 'PATTES DE FIXATION': 255, 'PORTE SCHEMA A4': 471, 'Répartiteur 1/2 rangée - 4P 160A - (Multiclip) - Courant CRETE 20kA ': 255, 'VOYANT TRICOLOR 400V': 0.261, 'TELECOMMANDE BAES URA': 2.90, 'VIGI 30mA': 1.03, 'DISJONCTEUR IC60N 3X2A COURBE C 50kA': 0.835, 'DISJONCTEUR IC60N 3X2A COURBE C 20kA': 0.835, 'DISJONCTEUR IC60H 3X10A COURBE C 30kA': 0.835, 'DISJONCTEUR IC60H 3X16A COURBE C 30kA': 0.835,  'DISJONCTEUR IC60L 3X16A COURBE C 25kA': 0.835, 'DISJONCTEUR IC60L 3X10A COURBE C 30kA':0.835}
-        Distribution1 = {'COFFRET PRISMASet G IP30 H:1080 L:600 P:205': 9.47, 'PORTE PLEINE': 9.47, 'BLOC INSERT TYPE PAPILLON': 9.47, 'PATTES DE FIXATION': 9.47, 'PORTE SCHEMA A4': 215, 'Répartiteur 1/2 rangée - 4P 160A - (Multiclip) - Courant CRETE 20kA ': 9.47, 'VOYANT TRICOLOR 400V': 0.00471, 'TELECOMMANDE BAES URA': 0.0067, 'VIGI 30mA': 0.032, 'DISJONCTEUR IC60N 3X2A COURBE C 50kA': 0.0156, 'DISJONCTEUR IC60N 3X2A COURBE C 20kA': 0.0156, 'DISJONCTEUR IC60H 3X10A COURBE C 30kA': 0.0156, 'DISJONCTEUR IC60H 3X16A COURBE C 30kA': 0.0156,  'DISJONCTEUR IC60L 3X16A COURBE C 25kA': 0.0156, 'DISJONCTEUR IC60L 3X10A COURBE C 30kA':0.0156}
-        Installation1 = {'COFFRET PRISMASet G IP30 H:1080 L:600 P:205': 9.11, 'PORTE PLEINE': 9.11, 'BLOC INSERT TYPE PAPILLON': 9.11, 'PATTES DE FIXATION': 9.11, 'PORTE SCHEMA A4': 15.4, 'Répartiteur 1/2 rangée - 4P 160A - (Multiclip) - Courant CRETE 20kA ': 9.11, 'VOYANT TRICOLOR 400V': 0.014, 'TELECOMMANDE BAES URA': 0.0172, 'VIGI 30mA': 0.0327, 'DISJONCTEUR IC60N 3X2A COURBE C 50kA': 0.0104, 'DISJONCTEUR IC60N 3X2A COURBE C 20kA': 0.0104, 'DISJONCTEUR IC60H 3X10A COURBE C 30kA': 0.0104, 'DISJONCTEUR IC60H 3X16A COURBE C 30kA': 0.0104,  'DISJONCTEUR IC60L 3X16A COURBE C 25kA': 0.0104, 'DISJONCTEUR IC60L 3X10A COURBE C 30kA':0.0104}
-        Utilisation1 = {'COFFRET PRISMASet G IP30 H:1080 L:600 P:205': 253, 'PORTE PLEINE': 253, 'BLOC INSERT TYPE PAPILLON': 253, 'PATTES DE FIXATION': 253, 'PORTE SCHEMA A4': 0, 'Répartiteur 1/2 rangée - 4P 160A - (Multiclip) - Courant CRETE 20kA ': 253, 'VOYANT TRICOLOR 400V': 13.7, 'TELECOMMANDE BAES URA': 61.5, 'VIGI 30mA': 2.41, 'DISJONCTEUR IC60N 3X2A COURBE C 50kA': 12.9, 'DISJONCTEUR IC60N 3X2A COURBE C 20kA': 12.9, 'DISJONCTEUR IC60H 3X10A COURBE C 30kA': 12.9, 'DISJONCTEUR IC60H 3X16A COURBE C 30kA': 12.9,  'DISJONCTEUR IC60L 3X16A COURBE C 25kA': 12.9, 'DISJONCTEUR IC60L 3X10A COURBE C 30kA':12.9}
-        Fin1 = {'COFFRET PRISMASet G IP30 H:1080 L:600 P:205': 107, 'PORTE PLEINE': 107, 'BLOC INSERT TYPE PAPILLON': 107, 'PATTES DE FIXATION': 107, 'PORTE SCHEMA A4': 267, 'Répartiteur 1/2 rangée - 4P 160A - (Multiclip) - Courant CRETE 20kA ': 107, 'VOYANT TRICOLOR 400V': 0.0625, 'TELECOMMANDE BAES URA': 0.248, 'VIGI 30mA': 0.3, 'DISJONCTEUR IC60N 3X2A COURBE C 50kA': 0.328, 'DISJONCTEUR IC60N 3X2A COURBE C 20kA': 0.328, 'DISJONCTEUR IC60H 3X10A COURBE C 30kA': 0.328, 'DISJONCTEUR IC60H 3X16A COURBE C 30kA': 0.328,  'DISJONCTEUR IC60L 3X16A COURBE C 25kA': 0.328, 'DISJONCTEUR IC60L 3X10A COURBE C 30kA':0.328}
+        Fabrication1 = [('COFFRET PRISMASet G IP30 H:1080 L:600 P:205', 255), ('PORTE PLEINE', 255), ('BLOC INSERT TYPE PAPILLON', 255), ('PATTES DE FIXATION', 255), ('PORTE SCHEMA A4', 471),  ('Répartiteur 1/2 rangée - 4P 160A - (Multiclip) - Courant CRETE 20kA ', 255), ( 'VOYANT TRICOLOR 400V', 0.261),  ('TELECOMMANDE BAES URA', 2.90), ('VIGI 30mA', 1.03),  ('DISJONCTEUR IC60N 3X2A COURBE C 50kA', 0.835),('DISJONCTEUR IC60N 3X2A COURBE C 50kA', 0.835),('DISJONCTEUR IC60N 2X2A COURBE C 20kA', 0.835),  ('DISJONCTEUR IC60N 3X2A COURBE C 20kA', 0.835), ('DISJONCTEUR IC60H 2X10A COURBE C 30kA', 0.835),  ('DISJONCTEUR IC60H 2X16A COURBE C 30kA', 0.835), ('DISJONCTEUR IC60L 3X16A COURBE C 25kA', 0.835), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.835),('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.835), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.835), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.835), ('DISJONCTEUR IC60H 2X10A COURBE C 30kA',0.835), ('VIGI 30mA', 1.03), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.835), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.835), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.835)]
+        Distribution1 = [ ('COFFRET PRISMASet G IP30 H:1080 L:600 P:205', 9.4),  ('PORTE PLEINE', 9.47),  ('BLOC INSERT TYPE PAPILLON', 9.47),  ('PATTES DE FIXATION', 9.47),  ('PORTE SCHEMA A4', 215), ('Répartiteur 1/2 rangée - 4P 160A - (Multiclip) - Courant CRETE 20kA ', 9.47), ('VOYANT TRICOLOR 400V', 0.00471), ('TELECOMMANDE BAES URA', 0.0067), ('VIGI 30mA', 0.032),  ('DISJONCTEUR IC60N 3X2A COURBE C 50kA', 0.0156),('DISJONCTEUR IC60N 3X2A COURBE C 50kA', 0.0156),('DISJONCTEUR IC60N 2X2A COURBE C 20kA', 0.0156),  ('DISJONCTEUR IC60N 3X2A COURBE C 20kA', 0.0156),  ('DISJONCTEUR IC60H 2X10A COURBE C 30kA', 0.0156),  ('DISJONCTEUR IC60H 2X16A COURBE C 30kA', 0.0156), ('DISJONCTEUR IC60L 3X16A COURBE C 25kA', 0.0156), ( 'DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.0156), ( 'DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.0156), ( 'DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.0156), ( 'DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.0156), ( 'DISJONCTEUR IC60H 2X10A COURBE C 30kA',0.0156), ('VIGI 30mA', 0.032), ( 'DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.0156), ( 'DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.0156), ( 'DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.0156)]
+        Installation1 = [ ('COFFRET PRISMASet G IP30 H:1080 L:600 P:205', 9.11), ('PORTE PLEINE', 9.11), ('BLOC INSERT TYPE PAPILLON', 9.11), ('PATTES DE FIXATION', 9.11),  ('PORTE SCHEMA A4', 15.4),  ('Répartiteur 1/2 rangée - 4P 160A - (Multiclip) - Courant CRETE 20kA ', 9.11), ( 'VOYANT TRICOLOR 400V', 0.014),  ('TELECOMMANDE BAES URA', 0.0172),  ('VIGI 30mA', 0.0327),  ('DISJONCTEUR IC60N 3X2A COURBE C 50kA', 0.0104), ('DISJONCTEUR IC60N 3X2A COURBE C 50kA', 0.0104),('DISJONCTEUR IC60N 2X2A COURBE C 20kA', 0.0104),  ('DISJONCTEUR IC60N 3X2A COURBE C 20kA', 0.0104),  ('DISJONCTEUR IC60H 2X10A COURBE C 30kA', 0.0104),  ('DISJONCTEUR IC60H 2X16A COURBE C 30kA', 0.0104),  ('DISJONCTEUR IC60L 3X16A COURBE C 25kA', 0.0104), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.0104),  ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.0104), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.0104), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.0104), ('DISJONCTEUR IC60H 2X10A COURBE C 30kA',0.0104), ('VIGI 30mA', 0.0327), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.0104),  ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.0104), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.0104)]
+        Utilisation1 = [ ('COFFRET PRISMASet G IP30 H:1080 L:600 P:205', 253),  ('PORTE PLEINE', 253),  ('BLOC INSERT TYPE PAPILLON', 253),  ('PATTES DE FIXATION', 253),  ('PORTE SCHEMA A4', 0),  ('Répartiteur 1/2 rangée - 4P 160A - (Multiclip) - Courant CRETE 20kA ', 253),  ('VOYANT TRICOLOR 400V', 13.7),  ('TELECOMMANDE BAES URA', 61.5),  ('VIGI 30mA', 2.41),  ('DISJONCTEUR IC60N 3X2A COURBE C 50kA', 12.9),('DISJONCTEUR IC60N 3X2A COURBE C 50kA', 12.9),('DISJONCTEUR IC60N 2X2A COURBE C 20kA', 12.9),  ('DISJONCTEUR IC60N 3X2A COURBE C 20kA', 12.9),  ('DISJONCTEUR IC60H 2X10A COURBE C 30kA', 12.9),  ('DISJONCTEUR IC60H 2X16A COURBE C 30kA', 12.9),  ('DISJONCTEUR IC60L 3X16A COURBE C 25kA', 12.9), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',12.9), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',12.9), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',12.9), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',12.9), ('DISJONCTEUR IC60H 2X10A COURBE C 30kA',12.9), ('VIGI 30mA', 2.41), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',12.9), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.0104), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.0104)]
+        Fin1 = [ ('COFFRET PRISMASet G IP30 H:1080 L:600 P:205', 107),  ('PORTE PLEINE', 107),  ('BLOC INSERT TYPE PAPILLON', 107),  ('PATTES DE FIXATION', 107),  ('PORTE SCHEMA A4', 267),  ('Répartiteur 1/2 rangée - 4P 160A - (Multiclip) - Courant CRETE 20kA ', 107),  ('VOYANT TRICOLOR 400V', 0.0625),  ('TELECOMMANDE BAES URA', 0.248),  ('VIGI 30mA', 0.3),  ('DISJONCTEUR IC60N 3X2A COURBE C 50kA', 0.328),('DISJONCTEUR IC60N 3X2A COURBE C 50kA', 0.328),('DISJONCTEUR IC60N 2X2A COURBE C 20kA', 0.328),  ('DISJONCTEUR IC60N 3X2A COURBE C 20kA', 0.328),  ('DISJONCTEUR IC60H 2X10A COURBE C 30kA', 0.328),  ('DISJONCTEUR IC60H 2X16A COURBE C 30kA', 0.328),  ('DISJONCTEUR IC60L 3X16A COURBE C 25kA', 0.328), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.328), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.328), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.328), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.328), ('DISJONCTEUR IC60H 2X10A COURBE C 30kA',0.328), ('VIGI 30mA', 0.3), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.328), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.328), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.328)]
         fab=0
         dis=0
         ins=0
         use=0
         fin=0
-        for x in Fabrication1.keys():
-            fab += float(Fabrication1[x])
-        for x in Distribution1.keys():
-            dis+=float(Distribution1[x])
-        for x in Installation1.keys():
-            ins+=float(Installation1[x])
-        for x in Utilisation1.keys():
-            use+=float(Utilisation1[x])
-        for x in Fin1.keys():
-            fin+=float(Fin1[x])        
+        for (nom,valeur) in Fabrication1:
+            fab += float(valeur)
+        for (nom,valeur) in Distribution1:
+            dis+=float(valeur)
+        for (nom,valeur) in Installation1:
+            ins+=float(valeur)
+        for (nom,valeur) in Utilisation1:
+            use+=float(valeur)
+        for (nom,valeur) in Fin1:
+            fin+=float(valeur)  
         total1 = fab + dis + ins + use + fin
-        if section1=='CSAP-P725-7 POSTE HT':
+        
+        Fabrication2 = [('COFFRET PRISMASet G IP30 H:1080 L:600 P:205', 255), ('PORTE PLEINE', 255), ('BLOC INSERT TYPE PAPILLON', 255), ('PATTES DE FIXATION', 255), ('PORTE SCHEMA A4', 471),('PrimaSet G - Auvent coffret ou armoire - IP41 - L600', 255),('INTERRUPTEUR SECTIONNEUR INS63 4P 63A', 16.6), ('Répartiteur 1/2 rangée - 4P 160A - (Multiclip) - Courant CRETE 20kA ', 255),('DISJONCTEUR IC60N 4X2A COURBE C PDC 50kA', 0.835), ('VOYANT TRICOLOR 400V', 0.261), ('DISJONCTEUR IC60N 2X2A COURBE C PDC 50kA', 0.835),('CONTACT DE PORTE', 0.0000511),('ECLAIRAGE LED 230V 5W', 0.000491) ,('DISJONCTEUR IC60N 2X2A COURBE C  PDC 50kA', 0.835), ('TELECOMMANDE BAES URA', 2.90),('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.835), ('DISJONCTEUR IC60N 2X16A COURBE C PDC 20kA', 0.835), ('VIGI 30mA', 1.03), ('DISJONCTEUR IC60H 3X25A COURBE C PDC 15kA', 0.835), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.835), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.835), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.835),  ('DISJONCTEUR IC60N 2X6A COURBE C PDC 20kA', 0.835), ('VIGI 30mA', 1.03), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.835),  ('DISJONCTEUR IC60N 2X16A COURBE C PDC 20kA', 0.835),('DISJONCTEUR IC60N 2X16A COURBE C PDC 20kA', 0.835)]
+        Distribution2 = [('COFFRET PRISMASet G IP30 H:1080 L:600 P:205', 9.47), ('PORTE PLEINE', 9.47), ('BLOC INSERT TYPE PAPILLON', 9.47), ('PATTES DE FIXATION', 9.47), ('PORTE SCHEMA A4', 215),('PrimaSet G - Auvent coffret ou armoire - IP41 - L600', 9.47),('INTERRUPTEUR SECTIONNEUR INS63 4P 63A', 0.369), ('Répartiteur 1/2 rangée - 4P 160A - (Multiclip) - Courant CRETE 20kA ', 9.47),('DISJONCTEUR IC60N 4X2A COURBE C PDC 50kA', 0.0156), ('VOYANT TRICOLOR 400V', 0.00471),('DISJONCTEUR IC60N 2X2A COURBE C PDC 50kA', 0.0156),('CONTACT DE PORTE', 0.00000000661),('ECLAIRAGE LED 230V 5W', 0),('DISJONCTEUR IC60N 2X2A COURBE C  PDC 50kA', 0.0156), ('TELECOMMANDE BAES URA', 0.0067),('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.0156), ('DISJONCTEUR IC60N 2X16A COURBE C PDC 20kA', 0.0156), ('VIGI 30mA', 0.032), ('DISJONCTEUR IC60H 3X25A COURBE C PDC 15kA', 0.0156), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.0156), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.0156), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.0156),  ('DISJONCTEUR IC60N 2X6A COURBE C PDC 20kA', 0.0156), ('VIGI 30mA', 0.032), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.0156), ('DISJONCTEUR IC60N 2X16A COURBE C PDC 20kA', 0.0156), ('DISJONCTEUR IC60N 2X16A COURBE C PDC 20kA', 0.0156)]
+        Installation2 = [('COFFRET PRISMASet G IP30 H:1080 L:600 P:205', 9.11), ('PORTE PLEINE', 9.11), ('BLOC INSERT TYPE PAPILLON', 9.11), ('PATTES DE FIXATION', 9.11), ('PORTE SCHEMA A4', 15.4),('PrimaSet G - Auvent coffret ou armoire - IP41 - L600', 9.11),('INTERRUPTEUR SECTIONNEUR INS63 4P 63A', 0.129), ('Répartiteur 1/2 rangée - 4P 160A - (Multiclip) - Courant CRETE 20kA ', 9.11),('DISJONCTEUR IC60N 4X2A COURBE C PDC 50kA', 0.0104), ('VOYANT TRICOLOR 400V', 0.014),('DISJONCTEUR IC60N 2X2A COURBE C PDC 50kA', 0.0104),('CONTACT DE PORTE', 0), ('ECLAIRAGE LED 230V 5W', 0),('DISJONCTEUR IC60N 2X2A COURBE C  PDC 50kA', 0.0104),('TELECOMMANDE BAES URA', 0.0172),('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.0104), ('DISJONCTEUR IC60N 2X16A COURBE C PDC 20kA', 0.0104), ('VIGI 30mA', 0.0327), ('DISJONCTEUR IC60H 3X25A COURBE C PDC 15kA', 0.0104), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.0104), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.0104), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.0104),  ('DISJONCTEUR IC60N 2X6A COURBE C PDC 20kA', 0.0104), ('VIGI 30mA', 0.0327), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.0104), ('DISJONCTEUR IC60N 2X16A COURBE C PDC 20kA', 0.0104), ('DISJONCTEUR IC60N 2X16A COURBE C PDC 20kA', 0.0104)]
+        Utilisation2 = [('COFFRET PRISMASet G IP30 H:1080 L:600 P:205', 253), ('PORTE PLEINE', 253), ('BLOC INSERT TYPE PAPILLON', 253), ('PATTES DE FIXATION', 253), ('PORTE SCHEMA A4', 0), ('PrimaSet G - Auvent coffret ou armoire - IP41 - L600', 253),('INTERRUPTEUR SECTIONNEUR INS63 4P 63A', 436),('Répartiteur 1/2 rangée - 4P 160A - (Multiclip) - Courant CRETE 20kA ', 253),('DISJONCTEUR IC60N 4X2A COURBE C PDC 50kA', 12.9), ('VOYANT TRICOLOR 400V', 13.7),('DISJONCTEUR IC60N 2X2A COURBE C PDC 50kA', 12.9),('CONTACT DE PORTE', 0),('ECLAIRAGE LED 230V 5W', 0.00000941),('DISJONCTEUR IC60N 2X2A COURBE C  PDC 50kA', 12.9),('TELECOMMANDE BAES URA', 61.5),('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 12.9), ('DISJONCTEUR IC60N 2X16A COURBE C PDC 20kA', 12.9), ('VIGI 30mA', 2.41), ('DISJONCTEUR IC60H 3X25A COURBE C PDC 15kA', 12.9), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 12.9), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 12.9), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 12.9),  ('DISJONCTEUR IC60N 2X6A COURBE C PDC 20kA', 12.9), ('VIGI 30mA', 2.41), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 12.9),('DISJONCTEUR IC60N 2X16A COURBE C PDC 20kA', 12.9), ('DISJONCTEUR IC60N 2X16A COURBE C PDC 20kA', 12.9)]
+        Fin2 = [('COFFRET PRISMASet G IP30 H:1080 L:600 P:205', 107), ('PORTE PLEINE', 107), ('BLOC INSERT TYPE PAPILLON', 107), ('PATTES DE FIXATION', 107), ('PORTE SCHEMA A4', 267),('PrimaSet G - Auvent coffret ou armoire - IP41 - L600', 107),('INTERRUPTEUR SECTIONNEUR INS63 4P 63A', 4.33), ('Répartiteur 1/2 rangée - 4P 160A - (Multiclip) - Courant CRETE 20kA ', 107),('DISJONCTEUR IC60N 4X2A COURBE C PDC 50kA', 0.328), ('VOYANT TRICOLOR 400V', 0.0625),('DISJONCTEUR IC60N 2X2A COURBE C PDC 50kA', 0.328), ('CONTACT DE PORTE', 0), ('ECLAIRAGE LED 230V 5W', 0),('DISJONCTEUR IC60N 2X2A COURBE C  PDC 50kA', 0.328), ('TELECOMMANDE BAES URA', 0.248), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.328), ('DISJONCTEUR IC60N 2X16A COURBE C PDC 20kA', 0.328), ('VIGI 30mA', 0.3), ('DISJONCTEUR IC60H 3X25A COURBE C PDC 15kA', 0.328), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.328), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.328), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.328),  ('DISJONCTEUR IC60N 2X6A COURBE C PDC 20kA', 0.328), ('VIGI 30mA', 0.3), ('DISJONCTEUR IC60N 2X10A COURBE C PDC 20kA', 0.328),('DISJONCTEUR IC60N 2X16A COURBE C PDC 20kA', 0.328),('DISJONCTEUR IC60N 2X16A COURBE C PDC 20kA', 0.328)]
+        fab2=0
+        dis2=0
+        ins2=0
+        use2=0
+        fin2=0
+        for (nom1,valeur1) in Fabrication2:
+            fab2 += float(valeur1)
+        for (nom1,valeur1) in Distribution2:
+            dis2+=float(valeur1)
+        for (nom1,valeur1) in Installation2:
+            ins2+=float(valeur1)
+        for (nom1,valeur1) in Utilisation2:
+            use2+=float(valeur1)
+        for (nom1,valeur1) in Fin2:
+            fin2+=float(valeur1)
+        total2 = fab2 + dis2 + ins2 + use2 + fin2
+        
+        Fabrication3= [('PanelSeT S3D - Enveloppe acier - H1200xL1200xP400 - 2 portes pleines IP 55',47.8 ), ('Rail de fixation',47.8 ), ('PORTE SCHEMA A4', 471 ), ('Auvent pour coffret L1200XP400mm', 47.8), ('PanelSeT - Thalassa - insert triangle - 8mm - coffret mural', 471), ('Interrupteur sectionneur 3P 400A commande extérieure latérale + poignée IP 55 Noire', 37.6), ('Axe pour poignée extérieure', 0.91 ),('VOYANT TRICOLOR 400V', 0.261), ('Linergy BS - JdB de fond 400A - barres taraudées 20x5 - L=1000 mm', 224), ('DISJONCTEUR IC60N 3x2A Courbe C PDC 50 KA', 0.835),('Contact Auxiliaire 1 OF/SD', 0.289),  ('DISJONCTEUR IC60N 3x2A Courbe C PDC 50 KA', 0.835),('Contact Auxiliaire 1 OF/SD', 0.289),  ('DISJONCTEUR IC60N 3x4A Courbe C PDC 50 KA', 0.835),('Contact Auxiliaire 1 OF/SD', 0.289),  ('DISJONCTEUR IC60N 3x2A Courbe C PDC 50 KA', 0.835),('Contact Auxiliaire 1 OF/SD', 0.289), ('ClimaSys - thermostat - à fermeture - bleu - °F', 101), ('ClimaSys - thermostat - à ouverture - rouge - °F',101),('ClimaSys - ventilateur 85m3/h - 230V - IP54 - avec grille et filtre G2',6.05 ), ('ClimaSys - résistance chauffante - 55W - 110..250V', 105), ('ComPacT NSX160F - Disjoncteur - MicroLogic 2.2 160A - 3P3D - 36kA - montage fixe', 16), ('Contact Auxiliaire 1 OF', 0.124), ('Contact Auxiliaire 1 SD', 0.124), ('Epanouisseur - séparateur de phase - 3P', 2.03)]
+        Distribution3=[('PanelSeT S3D - Enveloppe acier - H1200xL1200xP400 - 2 portes pleines IP 55', 19.5), ('Rail de fixation', 19.5 ), ('PORTE SCHEMA A4', 215), ('Auvent pour coffret L1200XP400mm', 19.5), ('PanelSeT - Thalassa - insert triangle - 8mm - coffret mural',215 ), ('Interrupteur sectionneur 3P 400A commande extérieure latérale + poignée IP 55 Noire',1.11 ), ('Axe pour poignée extérieure', 0.0294), ('VOYANT TRICOLOR 400V', 0.00471), ('Linergy BS - JdB de fond 400A - barres taraudées 20x5 - L=1000 mm', 2.16), ('DISJONCTEUR IC60N 3x2A Courbe C PDC 50 KA',0.0156 ), ('Contact Auxiliaire 1 OF/SD', 0.00577), ('DISJONCTEUR IC60N 3x2A Courbe C PDC 50 KA',0.0156 ), ('Contact Auxiliaire 1 OF/SD', 0.00577), ('DISJONCTEUR IC60N 3x4A Courbe C PDC 50 KA',0.0156 ), ('Contact Auxiliaire 1 OF/SD', 0.00577), ('DISJONCTEUR IC60N 3x4A Courbe C PDC 50 KA',0.0156 ), ('Contact Auxiliaire 1 OF/SD', 0.00577),('ClimaSys - thermostat - à fermeture - bleu - °F', 0.143), ('ClimaSys - thermostat - à ouverture - rouge - °F',0.143), ('ClimaSys - ventilateur 85m3/h - 230V - IP54 - avec grille et filtre G2',0 ), ('ClimaSys - résistance chauffante - 55W - 110..250V', 1.19), ('ComPacT NSX160F - Disjoncteur - MicroLogic 2.2 160A - 3P3D - 36kA - montage fixe', 0.602), ('Contact Auxiliaire 1 OF',0.00408 ), ('Contact Auxiliaire 1 SD',0.00408 ), ('Epanouisseur - séparateur de phase - 3P', 0.106)]
+        Installation3=[('PanelSeT S3D - Enveloppe acier - H1200xL1200xP400 - 2 portes pleines IP 55', 1.93), ('Rail de fixation',  1.93), ('PORTE SCHEMA A4', 15.4), ('Auvent pour coffret L1200XP400mm',1.93 ), ('PanelSeT - Thalassa - insert triangle - 8mm - coffret mural', 15.4), ('Interrupteur sectionneur 3P 400A commande extérieure latérale + poignée IP 55 Noire', 0.481 ), ('Axe pour poignée extérieure',0.0380), ('VOYANT TRICOLOR 400V', 0.0140), ('Linergy BS - JdB de fond 400A - barres taraudées 20x5 - L=1000 mm', 1.58), ('DISJONCTEUR IC60N 3x2A Courbe C PDC 50 KA', 0.0104), ('Contact Auxiliaire 1 OF/SD', 0.000688),  ('DISJONCTEUR IC60N 3x2A Courbe C PDC 50 KA', 0.0104), ('Contact Auxiliaire 1 OF/SD', 0.000688),  ('DISJONCTEUR IC60N 3x4A Courbe C PDC 50 KA', 0.0104), ('Contact Auxiliaire 1 OF/SD', 0.000688), ('DISJONCTEUR IC60N 3x4A Courbe C PDC 50 KA', 0.0104), ('Contact Auxiliaire 1 OF/SD', 0.000688), ('ClimaSys - thermostat - à fermeture - bleu - °F', 0), ('ClimaSys - thermostat - à ouverture - rouge - °F',0), ('ClimaSys - ventilateur 85m3/h - 230V - IP54 - avec grille et filtre G2',0 ), ('ClimaSys - résistance chauffante - 55W - 110..250V', 0), ('ComPacT NSX160F - Disjoncteur - MicroLogic 2.2 160A - 3P3D - 36kA - montage fixe', 0.174), ('Contact Auxiliaire 1 OF', 0.0197),  ('Contact Auxiliaire 1 SD', 0.0197), ('Epanouisseur - séparateur de phase - 3P', 0.0196)]
+        Utilisation3=[('PanelSeT S3D - Enveloppe acier - H1200xL1200xP400 - 2 portes pleines IP 55', 0), ('Rail de fixation',0 ), ('PORTE SCHEMA A4', 0), ('Auvent pour coffret L1200XP400mm', 0), ('PanelSeT - Thalassa - insert triangle - 8mm - coffret mural',0 ), ('Interrupteur sectionneur 3P 400A commande extérieure latérale + poignée IP 55 Noire', 666), ('Axe pour poignée extérieure', 0), ('VOYANT TRICOLOR 400V', 13.7), ('Linergy BS - JdB de fond 400A - barres taraudées 20x5 - L=1000 mm', 1100), ('DISJONCTEUR IC60N 3x2A Courbe C PDC 50 KA', 12.9), ('Contact Auxiliaire 1 OF/SD', 0.644), ('DISJONCTEUR IC60N 3x2A Courbe C PDC 50 KA', 12.9), ('Contact Auxiliaire 1 OF/SD', 0.644), ('DISJONCTEUR IC60N 3x4A Courbe C PDC 50 KA', 12.9), ('Contact Auxiliaire 1 OF/SD', 0.644), ('DISJONCTEUR IC60N 3x4A Courbe C PDC 50 KA', 12.9), ('Contact Auxiliaire 1 OF/SD', 0.644), ('ClimaSys - thermostat - à fermeture - bleu - °F', 259), ('ClimaSys - thermostat - à ouverture - rouge - °F',259), ('ClimaSys - ventilateur 85m3/h - 230V - IP54 - avec grille et filtre G2', 1480), ('ClimaSys - résistance chauffante - 55W - 110..250V', 262), ('ComPacT NSX160F - Disjoncteur - MicroLogic 2.2 160A - 3P3D - 36kA - montage fixe', 284), ('Contact Auxiliaire 1 OF', 16.2), ('Contact Auxiliaire 1 SD', 16.2), ('Epanouisseur - séparateur de phase - 3P', 16)]
+        Fin3=[('PanelSeT S3D - Enveloppe acier - H1200xL1200xP400 - 2 portes pleines IP 55', 23.1), ('Rail de fixation',23.1 ), ('PORTE SCHEMA A4', 267), ('Auvent pour coffret L1200XP400mm',23.1 ), ('PanelSeT - Thalassa - insert triangle - 8mm - coffret mural', 267), ('Interrupteur sectionneur 3P 400A commande extérieure latérale + poignée IP 55 Noire', 2.39), ('Axe pour poignée extérieure', 0.0103), ('VOYANT TRICOLOR 400V', 0.0625), ('Linergy BS - JdB de fond 400A - barres taraudées 20x5 - L=1000 mm', 7.53), ('DISJONCTEUR IC60N 3x2A Courbe C PDC 50 KA', 0.328), ('Contact Auxiliaire 1 OF/SD', 0.0066), ('DISJONCTEUR IC60N 3x2A Courbe C PDC 50 KA', 0.328), ('Contact Auxiliaire 1 OF/SD', 0.0066), ('DISJONCTEUR IC60N 3x4A Courbe C PDC 50 KA', 0.328), ('Contact Auxiliaire 1 OF/SD', 0.0066), ('DISJONCTEUR IC60N 3x4A Courbe C PDC 50 KA', 0.328), ('Contact Auxiliaire 1 OF/SD', 0.0066), ('ClimaSys - thermostat - à fermeture - bleu - °F',0), ('ClimaSys - thermostat - à ouverture - rouge - °F',0), ('ClimaSys - ventilateur 85m3/h - 230V - IP54 - avec grille et filtre G2', 0.193), ('ClimaSys - résistance chauffante - 55W - 110..250V', 0.0501), ('ComPacT NSX160F - Disjoncteur - MicroLogic 2.2 160A - 3P3D - 36kA - montage fixe', 3.52), ('Contact Auxiliaire 1 OF', 0.0387), ('Contact Auxiliaire 1 SD', 0.0387), ('Epanouisseur - séparateur de phase - 3P', 1.02)]
+        fab3=0
+        dis3=0
+        ins3=0
+        use3=0
+        fin3=0
+        for (nom2,valeur2) in Fabrication3:
+            fab3 += float(valeur2)
+        for (nom2,valeur2) in Distribution3:
+            dis3+=float(valeur2)
+        for (nom2,valeur2) in Installation3:
+            ins3+=float(valeur2)
+        for (nom2,valeur2) in Utilisation3:
+            use3+=float(valeur2)
+        for (nom2,valeur2) in Fin3:
+            fin3+=float(valeur2)
+        total3 = fab3 + dis3 + ins3 + use3 + fin3
+        
+        if section1=='CSAP POSTE HT':
             GWP5 = round(abs(total1), 2)
+            st.session_state.GWP5 = GWP5
+        elif section1=='CSAP POSTE TGBT':
+            GWP5 = round(abs(total2), 2)
+        elif section1=="COFFRET D'ISOLEMENT 125A":
+            GWP5 = round(abs(total3), 2)
             st.session_state.GWP5 = GWP5
         if st.button("Valider"):
             st.metric(label="Total GWP du coffret choisi", value=f"{GWP5} kg CO₂")
         if st.button("Ajouter à la liste"):
             st.session_state.total_liste.append({f'Coffret {section1}' : GWP5})
-            d = {
-                '': [f'{section1}'],
-                'Fabrication': [fab],
-                'Distribution': [dis],
-                'Installation': [ins],
-                'Utilisation': [use],
-                'Fin de vie': [fin],
-                'Global warming': [GWP5]
-            }
+            if section1=='CSAP POSTE HT':
+                d = {
+                    '': [f'{section1}'],
+                    'Fabrication': [fab],
+                    'Distribution': [dis],
+                    'Installation': [ins],
+                    'Utilisation': [use],
+                    'Fin de vie': [fin],
+                    'Global warming': [GWP5]
+                }
+            elif section1=='CSAP POSTE TGBT':
+                d = {
+                    '': [f'{section1}'],
+                    'Fabrication': [fab2],
+                    'Distribution': [dis2],
+                    'Installation': [ins2],
+                    'Utilisation': [use2],
+                    'Fin de vie': [fin2],
+                    'Global warming': [GWP5]
+                }
+            elif section1=="COFFRET D'ISOLEMENT 125A":
+                d = {
+                    '': [f'{section1}'],
+                    'Fabrication': [fab3],
+                    'Distribution': [dis3],
+                    'Installation': [ins3],
+                    'Utilisation': [use3],
+                    'Fin de vie': [fin3],
+                    'Global warming': [GWP5]
+                }
             df1 = pd.DataFrame(d)
             st.session_state.df = pd.concat([st.session_state.df, df1], ignore_index=True)
             st.dataframe(st.session_state.df)
@@ -399,21 +470,52 @@ if selected_menu=='Calcul GWP':
         if detail_button_container.button("Voir le détail", key="detail_button_418"):
             st.session_state.df_co = pd.DataFrame()
             t=0
+            w=0
+            q=0
             for i, row in st.session_state.df.iterrows():
-                if row[''] == 'CSAP-P725-7 POSTE HT':
+                if row[''] == 'CSAP POSTE HT':
                     t += 1
+                elif row[''] == 'CSAP POSTE TGBT':
+                    w += 1
+                elif row[''] == "COFFRET D'ISOLEMENT 125A":
+                    q += 1
             details = []
-            for s in Fabrication1.keys():
-                    tot = (float(Fabrication1[s]) + float(Distribution1[s]) + float(Installation1[s]) + float(Utilisation1[s]) + float(Fin1[s]))
-                    ligne = {'': f"{t} X {s}",
-                        "Fabrication": float(Fabrication1[s]),
-                        "Distribution": float(Distribution1[s]),
-                        "Installation": float(Installation1[s]),
-                        "Utilisation": float(Utilisation1[s]),
-                        "Fin de vie": float(Fin1[s]),
-                        'Global warming': float(tot)
-                    }
-                    details.append(ligne)
+            if t>0:
+                for x in range(len(Fabrication1)):
+                        tot = (float(Fabrication1[x][1]) + float(Distribution1[x][1]) + float(Installation1[x][1]) + float(Utilisation1[x][1]) + float(Fin1[x][1]))
+                        ligne = {'': f"{t} X {Fabrication1[x][0]}",
+                            "Fabrication": float(Fabrication1[x][1]*t),
+                            "Distribution": float(Distribution1[x][1]*t),
+                            "Installation": float(Installation1[x][1]*t),
+                            "Utilisation": float(Utilisation1[x][1]*t),
+                            "Fin de vie": float(Fin1[x][1]*t),
+                            'Global warming': float(tot*t)
+                        }
+                        details.append(ligne)
+            if w>0:
+                for y in range(len(Fabrication2)):
+                        tot2 = (float(Fabrication2[y][1]) + float(Distribution2[y][1]) + float(Installation2[y][1]) + float(Utilisation2[y][1]) + float(Fin2[y][1]))
+                        ligne2 = {'': f"{w} X {Fabrication2[y][0]}",
+                            "Fabrication": float(Fabrication2[y][1]*w),
+                            "Distribution": float(Distribution2[y][1]*w),
+                            "Installation": float(Installation2[y][1]*w),
+                            "Utilisation": float(Utilisation2[y][1]*w),
+                            "Fin de vie": float(Fin2[y][1]*w),
+                            'Global warming': float(tot2*w)
+                        }
+                        details.append(ligne2)
+            if q>0:
+                for a in range(len(Fabrication3)):
+                        tot3 = (float(Fabrication3[a][1]) + float(Distribution3[a][1]) + float(Installation3[a][1]) + float(Utilisation3[a][1]) + float(Fin3[a][1]))
+                        ligne3 = {'': f"{q} X {Fabrication3[a][0]}",
+                            "Fabrication": float(Fabrication3[a][1]*q),
+                            "Distribution": float(Distribution3[a][1]*q),
+                            "Installation": float(Installation3[a][1]*q),
+                            "Utilisation": float(Utilisation3[a][1]*q),
+                            "Fin de vie": float(Fin3[a][1]*q),
+                            'Global warming': float(tot3*q)
+                        }
+                        details.append(ligne3)
             df1 = pd.DataFrame(details)
             st.session_state.df_co = pd.concat([st.session_state.df_co, df1], ignore_index=True)
             st.dataframe(st.session_state.df_co)
@@ -457,4 +559,3 @@ elif selected_menu == 'Total GWP':
             st.rerun()
     else:
         st.info("Aucun élément n'a été ajouté à la liste")
-
