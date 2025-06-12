@@ -350,7 +350,7 @@ if selected_menu=='Calcul GWP':
             unsafe_allow_html=True
             )  
         
-        section1 = st.selectbox("", ('CSAP POSTE HT','CSAP POSTE TGBT',"COFFRET D'ISOLEMENT 125A"), key="section1")
+        section1 = st.selectbox("", ('CSAP POSTE HT','CSAP POSTE TGBT',"COFFRET D'ISOLEMENT 125A", "COFFRET DE COMPTAGE", "COFFRET HQ"), key="section1")
 
         section1 = str(section1)
         Fabrication1 = [('COFFRET PRISMASet G IP30 H:1080 L:600 P:205', 255), ('PORTE PLEINE', 255), ('BLOC INSERT TYPE PAPILLON', 255), ('PATTES DE FIXATION', 255), ('PORTE SCHEMA A4', 471),  ('Répartiteur 1/2 rangée - 4P 160A - (Multiclip) - Courant CRETE 20kA ', 255), ( 'VOYANT TRICOLOR 400V', 0.261),  ('TELECOMMANDE BAES URA', 2.90), ('VIGI 30mA', 1.03),  ('DISJONCTEUR IC60N 3X2A COURBE C 50kA', 0.835),('DISJONCTEUR IC60N 3X2A COURBE C 50kA', 0.835),('DISJONCTEUR IC60N 2X2A COURBE C 20kA', 0.835),  ('DISJONCTEUR IC60N 3X2A COURBE C 20kA', 0.835), ('DISJONCTEUR IC60H 2X10A COURBE C 30kA', 0.835),  ('DISJONCTEUR IC60H 2X16A COURBE C 30kA', 0.835), ('DISJONCTEUR IC60L 3X16A COURBE C 25kA', 0.835), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.835),('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.835), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.835), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.835), ('DISJONCTEUR IC60H 2X10A COURBE C 30kA',0.835), ('VIGI 30mA', 1.03), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.835), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.835), ('DISJONCTEUR IC60H 2X16A COURBE C 30kA',0.835)]
@@ -419,6 +419,51 @@ if selected_menu=='Calcul GWP':
             fin3+=float(valeur2)
         total3 = fab3 + dis3 + ins3 + use3 + fin3
         
+        Fabrication4 = [('Interrupteur-Sectionneur SIRCO M - Comande Extérieure (3x20A)', 1.96), ('Répartiteur Bipolaire (100A)',1.46 ),('Acti9 iC60N - Disjoncteur Courbe C 2x2A', 0.835), ('Voyant led Banc 230v + support rail DIN', 0.261),('Acti9 iC60N - Disjoncteur Courbe C 2x10A + Vigi 30mA', 1.87), ('Acti9 iC60N - Disjoncteur Courbe C 2x10A', 0.835),('Alimentation 230VAC/24VDC-72W-3A',32.7), ('Interrupteur iSW 2x40A', 2.29), ('Acti9 iC60N - Disjoncteur Courbe C 2x10A', 0.835), ('Acti9 iC60H-DC - Disjoncteur Courbe C 2x2A', 0.85)]
+        Distribution4= [('Interrupteur-Sectionneur SIRCO M - Comande Extérieure (3x20A)', 0.0968), ('Répartiteur Bipolaire (100A)', 0.0256), ('Acti9 iC60N - Disjoncteur Courbe C 2x2A', 0.0156), ('Voyant led Banc 230v + support rail DIN', 0.00471), ('Acti9 iC60N - Disjoncteur Courbe C 2x10A + Vigi 30mA', 0.0476), ('Acti9 iC60N - Disjoncteur Courbe C 2x10A', 0.0156), ('Alimentation 230VAC/24VDC-72W-3A',0.195), ('Interrupteur iSW 2x40A', 0.0321), ('Acti9 iC60N - Disjoncteur Courbe C 2x10A', 0.0156), ('Acti9 iC60H-DC - Disjoncteur Courbe C 2x2A', 0.0152)]
+        Installation4= [('Interrupteur-Sectionneur SIRCO M - Comande Extérieure (3x20A)', 0.0757), ('Répartiteur Bipolaire (100A)', 0.0549), ('Acti9 iC60N - Disjoncteur Courbe C 2x2A', 0.0104), ('Voyant led Banc 230v + support rail DIN', 0.0140), ('Acti9 iC60N - Disjoncteur Courbe C 2x10A + Vigi 30mA', 0.0431), ('Acti9 iC60N - Disjoncteur Courbe C 2x10A', 0.0104), ('Alimentation 230VAC/24VDC-72W-3A',0), ('Interrupteur iSW 2x40A', 0.0226), ('Acti9 iC60N - Disjoncteur Courbe C 2x10A', 0.0104), ('Acti9 iC60H-DC - Disjoncteur Courbe C 2x2A', 0.00837)]
+        Utilisation4= [('Interrupteur-Sectionneur SIRCO M - Comande Extérieure (3x20A)', 24.2), ('Répartiteur Bipolaire (100A)', 17.5), ('Acti9 iC60N - Disjoncteur Courbe C 2x2A', 12.9), ('Voyant led Banc 230v + support rail DIN', 13.7), ('Acti9 iC60N - Disjoncteur Courbe C 2x10A + Vigi 30mA', 15.3), ('Acti9 iC60N - Disjoncteur Courbe C 2x10A', 12.9), ('Alimentation 230VAC/24VDC-72W-3A',991), ('Interrupteur iSW 2x40A', 4.33), ('Acti9 iC60N - Disjoncteur Courbe C 2x10A', 12.9), ('Acti9 iC60H-DC - Disjoncteur Courbe C 2x2A', 9.69)]
+        Fin4= [('Interrupteur-Sectionneur SIRCO M - Comande Extérieure (3x20A)', 0.131), ('Répartiteur Bipolaire (100A)', 0.454), ('Acti9 iC60N - Disjoncteur Courbe C 2x2A', 0.328), ('Voyant led Banc 230v + support rail DIN', 0.0625), ('Acti9 iC60N - Disjoncteur Courbe C 2x10A + Vigi 30mA', 0.628), ('Acti9 iC60N - Disjoncteur Courbe C 2x10A', 0.328), ('Alimentation 230VAC/24VDC-72W-3A',1.11), ('Interrupteur iSW 2x40A', 0.912), ('Acti9 iC60N - Disjoncteur Courbe C 2x10A', 0.328), ('Acti9 iC60H-DC - Disjoncteur Courbe C 2x2A', 0.302)]
+        fab4=0
+        dis4=0
+        ins4=0
+        use4=0
+        fin4=0
+        for (nom1,valeur1) in Fabrication4:
+            fab4 += float(valeur1)
+        for (nom1,valeur1) in Distribution4:
+            dis4+=float(valeur1)
+        for (nom1,valeur1) in Installation4:
+            ins4+=float(valeur1)
+        for (nom1,valeur1) in Utilisation4:
+            use4+=float(valeur1)
+        for (nom1,valeur1) in Fin4:
+            fin4+=float(valeur1)
+        total4 = fab4 + dis4 + ins4 + use4 + fin4
+        
+        
+        Fabrication5=[('DISJONCTEUR IC60N 2x3A Courbe C', 0.835), ('Contact Auxiliaire OF/SD', 0.289), ('DISJONCTEUR IC60N 2x10A Courbe C', 0.835), ('Contact Auxiliaire OF/SD', 0.289), ('DISJONCTEUR IC60N 2x10A Courbe C', 0.835), ('Contact Auxiliaire OF/SD', 0.289), ('DISJONCTEUR IC60N 2x10A Courbe C', 0.835), ('Contact Auxiliaire OF/SD', 0.289), ('DISJONCTEUR IC60N 2x10A Courbe C', 0.835), ('Contact Auxiliaire OF/SD', 0.289), ('ALIMENTATION REGULEE à DECOUPAGE TRI 480W/20A', 23.1), ('Disjoncteur  C60HDC 2x2A Courbe C', 0.85), ('REPARTITEUR BIPOLAIRES A BORNES EQUIPES DE 2 BARREAUX - 2x40A', 1.08), ('Disjoncteur  C60HDC 2x2A Courbe C', 0.85), ('VOYANT BLANC A COLLERETTE 22mm 24VDC', 0.261), ('Disjoncteur  C60HDC 2x10A Courbe C', 0.85), ('Contact Auxiliaire OF', 0.289), ('Disjoncteur  C60HDC 2x16A Courbe C', 0.85), ('Contact Auxiliaire OF/SD', 0.289), ('Disjoncteur  C60HDC 2x10A Courbe C', 0.85), ('Contact Auxiliaire OF/SD', 0.289), ('Disjoncteur  C60HDC 2x10A Courbe C', 0.85), ('Contact Auxiliaire OF/SD', 0.289)]
+        Distribution5=[('DISJONCTEUR IC60N 2x3A Courbe C', 0.0156), ('Contact Auxiliaire OF/SD', 0.00577), ('DISJONCTEUR IC60N 2x10A Courbe C', 0.0156), ('Contact Auxiliaire OF/SD', 0.00577), ('DISJONCTEUR IC60N 2x10A Courbe C', 0.0156), ('Contact Auxiliaire OF/SD', 0.00577), ('DISJONCTEUR IC60N 2x10A Courbe C', 0.0156), ('Contact Auxiliaire OF/SD', 0.00577), ('DISJONCTEUR IC60N 2x10A Courbe C', 0.0156), ('Contact Auxiliaire OF/SD', 0.00577), ('ALIMENTATION REGULEE à DECOUPAGE TRI 480W/20A', 0.363), ('Disjoncteur  C60HDC 2x2A Courbe C', 0.0152), ('REPARTITEUR BIPOLAIRES A BORNES EQUIPES DE 2 BARREAUX - 2x40A', 0.0204), ('Disjoncteur  C60HDC 2x2A Courbe C', 0.0152), ('VOYANT BLANC A COLLERETTE 22mm 24VDC', 0.00471), ('Disjoncteur  C60HDC 2x10A Courbe C', 0.0152), ('Contact Auxiliaire OF', 0.00577), ('Disjoncteur  C60HDC 2x16A Courbe C', 0.0152), ('Contact Auxiliaire OF/SD', 0.00577), ('Disjoncteur  C60HDC 2x10A Courbe C', 0.0152), ('Contact Auxiliaire OF/SD', 0.00577), ('Disjoncteur  C60HDC 2x10A Courbe C', 0.0152), ('Contact Auxiliaire OF/SD', 0.00577)]
+        Installation5=[('DISJONCTEUR IC60N 2x3A Courbe C', 0.0104), ('Contact Auxiliaire OF/SD', 0.000688), ('DISJONCTEUR IC60N 2x10A Courbe C', 0.0104), ('Contact Auxiliaire OF/SD', 0.000688), ('DISJONCTEUR IC60N 2x10A Courbe C', 0.0104), ('Contact Auxiliaire OF/SD', 0.000688), ('DISJONCTEUR IC60N 2x10A Courbe C', 0.0104), ('Contact Auxiliaire OF/SD', 0.000688), ('DISJONCTEUR IC60N 2x10A Courbe C', 0.0104), ('Contact Auxiliaire OF/SD', 0.000688), ('ALIMENTATION REGULEE à DECOUPAGE TRI 480W/20A', 0), ('Disjoncteur  C60HDC 2x2A Courbe C', 0.00837), ('REPARTITEUR BIPOLAIRES A BORNES EQUIPES DE 2 BARREAUX - 2x40A', 0), ('Disjoncteur  C60HDC 2x2A Courbe C', 0.00837), ('VOYANT BLANC A COLLERETTE 22mm 24VDC', 0.014), ('Disjoncteur  C60HDC 2x10A Courbe C', 0.00837), ('Contact Auxiliaire OF', 0.000688), ('Disjoncteur  C60HDC 2x16A Courbe C', 0.00837), ('Contact Auxiliaire OF/SD', 0.000688), ('Disjoncteur  C60HDC 2x10A Courbe C', 0.00837), ('Contact Auxiliaire OF/SD', 0.000688), ('Disjoncteur  C60HDC 2x10A Courbe C', 0.00837), ('Contact Auxiliaire OF/SD', 0.000688)]
+        Utilisation5=[('DISJONCTEUR IC60N 2x3A Courbe C', 12.9), ('Contact Auxiliaire OF/SD', 0.644), ('DISJONCTEUR IC60N 2x10A Courbe C', 12.9), ('Contact Auxiliaire OF/SD', 0.644), ('DISJONCTEUR IC60N 2x10A Courbe C', 12.9), ('Contact Auxiliaire OF/SD', 0.644), ('DISJONCTEUR IC60N 2x10A Courbe C', 12.9), ('Contact Auxiliaire OF/SD', 0.644), ('DISJONCTEUR IC60N 2x10A Courbe C', 12.9), ('Contact Auxiliaire OF/SD', 0.644), ('ALIMENTATION REGULEE à DECOUPAGE TRI 480W/20A', 1350), ('Disjoncteur  C60HDC 2x2A Courbe C', 9.69), ('REPARTITEUR BIPOLAIRES A BORNES EQUIPES DE 2 BARREAUX - 2x40A', 33.5), ('Disjoncteur  C60HDC 2x2A Courbe C', 9.69), ('VOYANT BLANC A COLLERETTE 22mm 24VDC', 13.7), ('Disjoncteur  C60HDC 2x10A Courbe C', 9.69), ('Contact Auxiliaire OF', 0.644), ('Disjoncteur  C60HDC 2x16A Courbe C', 9.69), ('Contact Auxiliaire OF/SD', 0.644), ('Disjoncteur  C60HDC 2x10A Courbe C', 9.69), ('Contact Auxiliaire OF/SD', 0.644), ('Disjoncteur  C60HDC 2x10A Courbe C', 9.69), ('Contact Auxiliaire OF/SD', 0.644)]
+        Fin5=[('DISJONCTEUR IC60N 2x3A Courbe C', 0.328), ('Contact Auxiliaire OF/SD', 0.0066), ('DISJONCTEUR IC60N 2x10A Courbe C', 0.328), ('Contact Auxiliaire OF/SD', 0.0066), ('DISJONCTEUR IC60N 2x10A Courbe C', 0.328), ('Contact Auxiliaire OF/SD', 0.0066), ('DISJONCTEUR IC60N 2x10A Courbe C', 0.328), ('Contact Auxiliaire OF/SD', 0.0066), ('DISJONCTEUR IC60N 2x10A Courbe C', 0.328), ('Contact Auxiliaire OF/SD', 0.0066), ('ALIMENTATION REGULEE à DECOUPAGE TRI 480W/20A', 0.14), ('Disjoncteur  C60HDC 2x2A Courbe C', 0.302), ('REPARTITEUR BIPOLAIRES A BORNES EQUIPES DE 2 BARREAUX - 2x40A', 0.011), ('Disjoncteur  C60HDC 2x2A Courbe C', 0.302), ('VOYANT BLANC A COLLERETTE 22mm 24VDC', 0.0625), ('Disjoncteur  C60HDC 2x10A Courbe C', 0.302), ('Contact Auxiliaire OF',0.0066),('Disjoncteur  C60HDC 2x16A Courbe C', 0.302), ('Contact Auxiliaire OF/SD',0.0066), ('Disjoncteur  C60HDC 2x10A Courbe C', 0.302), ('Contact Auxiliaire OF/SD',0.0066), ('Disjoncteur  C60HDC 2x10A Courbe C', 0.302), ('Contact Auxiliaire OF/SD',0.0066)]
+        fab5=0
+        dis5=0
+        ins5=0
+        use5=0
+        fin5=0
+        for (nom1,valeur1) in Fabrication5:
+            fab5 += float(valeur1)
+        for (nom1,valeur1) in Distribution5:
+            dis5+=float(valeur1)
+        for (nom1,valeur1) in Installation5:
+            ins5+=float(valeur1)
+        for (nom1,valeur1) in Utilisation5:
+            use5+=float(valeur1)
+        for (nom1,valeur1) in Fin5:
+            fin5+=float(valeur1)
+        total5 = fab5 + dis5 + ins5 + use5 + fin5
+        
         if section1=='CSAP POSTE HT':
             GWP5 = round(abs(total1), 2)
             st.session_state.GWP5 = GWP5
@@ -426,6 +471,12 @@ if selected_menu=='Calcul GWP':
             GWP5 = round(abs(total2), 2)
         elif section1=="COFFRET D'ISOLEMENT 125A":
             GWP5 = round(abs(total3), 2)
+            st.session_state.GWP5 = GWP5
+        elif section1=="COFFRET DE COMPTAGE":
+            GWP5 = round(abs(total4), 2)
+            st.session_state.GWP5 = GWP5
+        elif section1=="COFFRET HQ":
+            GWP5 = round(abs(total5), 2)
             st.session_state.GWP5 = GWP5
         if st.button("Valider"):
             st.metric(label="Total GWP du coffret choisi", value=f"{GWP5} kg CO₂")
@@ -461,6 +512,26 @@ if selected_menu=='Calcul GWP':
                     'Fin de vie': [fin3],
                     'Global warming': [GWP5]
                 }
+            elif section1=="COFFRET DE COMPTAGE":
+                d = {
+                    '': [f'{section1}'],
+                    'Fabrication': [fab4],
+                    'Distribution': [dis4],
+                    'Installation': [ins4],
+                    'Utilisation': [use4],
+                    'Fin de vie': [fin4],
+                    'Global warming': [GWP5]
+                }
+            elif section1=="COFFRET HQ":
+                d = {
+                    '': [f'{section1}'],
+                    'Fabrication': [fab5],
+                    'Distribution': [dis5],
+                    'Installation': [ins5],
+                    'Utilisation': [use5],
+                    'Fin de vie': [fin5],
+                    'Global warming': [GWP5]
+                }
             df1 = pd.DataFrame(d)
             st.session_state.df = pd.concat([st.session_state.df, df1], ignore_index=True)
             st.dataframe(st.session_state.df)
@@ -472,6 +543,8 @@ if selected_menu=='Calcul GWP':
             t=0
             w=0
             q=0
+            z=0
+            e=0
             for i, row in st.session_state.df.iterrows():
                 if row[''] == 'CSAP POSTE HT':
                     t += 1
@@ -479,6 +552,10 @@ if selected_menu=='Calcul GWP':
                     w += 1
                 elif row[''] == "COFFRET D'ISOLEMENT 125A":
                     q += 1
+                elif row[''] == "COFFRET DE COMPTAGE":
+                    z += 1
+                elif row[''] == "COFFRET HQ":
+                    e += 1
             details = []
             if t>0:
                 for x in range(len(Fabrication1)):
@@ -516,6 +593,30 @@ if selected_menu=='Calcul GWP':
                             'Global warming': float(tot3*q)
                         }
                         details.append(ligne3)
+            if z>0:
+                for s in range(len(Fabrication4)):
+                        tot4 = (float(Fabrication4[s][1]) + float(Distribution4[s][1]) + float(Installation4[s][1]) + float(Utilisation4[s][1]) + float(Fin4[s][1]))
+                        ligne4 = {'': f"{z} X {Fabrication4[s][0]}",
+                            "Fabrication": float(Fabrication4[s][1]*z),
+                            "Distribution": float(Distribution4[s][1]*z),
+                            "Installation": float(Installation4[s][1]*z),
+                            "Utilisation": float(Utilisation4[s][1]*z),
+                            "Fin de vie": float(Fin4[s][1]*z),
+                            'Global warming': float(tot4*z)
+                        }
+                        details.append(ligne4)
+            if e>0:
+                for b in range(len(Fabrication5)):
+                        tot5 = (float(Fabrication5[b][1]) + float(Distribution5[b][1]) + float(Installation5[b][1]) + float(Utilisation5[b][1]) + float(Fin5[b][1]))
+                        ligne5 = {'': f"{e} X {Fabrication5[b][0]}",
+                            "Fabrication": float(Fabrication5[b][1]*e),
+                            "Distribution": float(Distribution5[b][1]*e),
+                            "Installation": float(Installation5[b][1]*e),
+                            "Utilisation": float(Utilisation5[b][1]*e),
+                            "Fin de vie": float(Fin5[b][1]*e),
+                            'Global warming': float(tot5*e)
+                        }
+                        details.append(ligne5)
             df1 = pd.DataFrame(details)
             st.session_state.df_co = pd.concat([st.session_state.df_co, df1], ignore_index=True)
             st.dataframe(st.session_state.df_co)
