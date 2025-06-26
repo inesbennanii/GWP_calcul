@@ -3,3 +3,4 @@ pandas
 openpyxl
 Pillow
 streamlit_option_menu
+streamlit_scroll_navigation
