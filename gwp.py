@@ -198,7 +198,7 @@ if selected_menu=='Calcul GWP':
             st.session_state.use2 = use2
             st.session_state.fdv2 = fdv2
 
-            st.success(f"Le matériau à utiliser est **{materiau}**")
+            st.info(f"Le matériau à utiliser est **{materiau}**")
             st.metric(label="Total GWP de l'aluminium", value=f"{GWP1} kg CO₂")
             st.metric(label="Total GWP du cuivre", value=f"{GWP2} kg CO₂")
         
@@ -215,7 +215,7 @@ if selected_menu=='Calcul GWP':
             }
             df1 = pd.DataFrame(d)
             st.session_state.df = pd.concat([st.session_state.df, df1], ignore_index=True)
-            st.success("Ajouté à la liste !")
+            st.info("Ajouté à la liste !")
 
         if "GWP2" in st.session_state and st.button("Choisir le cuivre",key="cuivre"):
             st.session_state.total_liste.append({f'Cuivre {section2}' : st.session_state.GWP2})
@@ -230,7 +230,7 @@ if selected_menu=='Calcul GWP':
             }
             df1 = pd.DataFrame(d)
             st.session_state.df = pd.concat([st.session_state.df, df1], ignore_index=True)
-            st.success("Ajouté à la liste !")
+            st.info("Ajouté à la liste !")
         
         if not st.session_state.df.empty:
             st.dataframe(st.session_state.df)
@@ -284,7 +284,7 @@ if selected_menu=='Calcul GWP':
             }
             df1 = pd.DataFrame(d)
             st.session_state.df = pd.concat([st.session_state.df, df1], ignore_index=True)
-            st.success("Ajouté à la liste !")
+            st.info("Ajouté à la liste !")
 
 
         if not st.session_state.df.empty:
@@ -349,7 +349,7 @@ if selected_menu=='Calcul GWP':
                     }
                     df1 = pd.DataFrame(d)
                     st.session_state.df = pd.concat([st.session_state.df, df1], ignore_index=True)
-                    st.success("Ajouté à la liste !")
+                    st.info("Ajouté à la liste !")
             if not st.session_state.df.empty:
                st.dataframe(st.session_state.df)
         
@@ -472,7 +472,7 @@ if selected_menu=='Calcul GWP':
             df1 = pd.DataFrame(d)
             st.session_state.df = pd.concat([st.session_state.df, df1], ignore_index=True)
             st.dataframe(st.session_state.df)
-            st.success("Ajouté à la liste !")
+            st.info("Ajouté à la liste !")
         detail_button_container = st.empty()
         detail_button_container2 = st.empty()
         if detail_button_container.button("Voir le détail", key="detail_button_418"):
@@ -833,7 +833,7 @@ if selected_menu=='Calcul GWP':
             df1 = pd.DataFrame(d)
             st.session_state.df = pd.concat([st.session_state.df, df1], ignore_index=True)
             st.dataframe(st.session_state.df)
-            st.success("Ajouté à la liste !")
+            st.info("Ajouté à la liste !")
         detail_button_container = st.empty()
         detail_button_container2 = st.empty()
         if detail_button_container.button("Voir le détail", key="detail_button_418"):
@@ -1022,7 +1022,7 @@ if selected_menu=='Calcul GWP':
                 df1 = pd.DataFrame(d)
                 st.session_state.df = pd.concat([st.session_state.df, df1], ignore_index=True)
                 st.dataframe(st.session_state.df)
-                st.success("Ajouté à la liste !")
+                st.info("Ajouté à la liste !")
         detail_button_container = st.empty()
         detail_button_container2 = st.empty()
         if detail_button_container.button("Voir le détail", key="detail_button_418"):
@@ -1102,7 +1102,7 @@ if selected_menu=='Calcul GWP':
             df1 = pd.DataFrame(d)
             st.session_state.df = pd.concat([st.session_state.df, df1], ignore_index=True)
             st.dataframe(st.session_state.df)
-            st.success("Ajouté à la liste !")
+            st.info("Ajouté à la liste !")
         detail_button_container = st.empty()
         detail_button_container2 = st.empty()
         if detail_button_container.button("Voir le détail", key="detail_button_418"):
@@ -1178,7 +1178,7 @@ if selected_menu=='Calcul GWP':
             df1 = pd.DataFrame(d)
             st.session_state.df = pd.concat([st.session_state.df, df1], ignore_index=True)
             st.dataframe(st.session_state.df)
-            st.success("Ajouté à la liste !")
+            st.info("Ajouté à la liste !")
         detail_button_container = st.empty()
         detail_button_container2 = st.empty()
         if detail_button_container.button("Voir le détail", key="detail_button_418"):
@@ -1253,7 +1253,7 @@ if selected_menu=='Calcul GWP':
             df1 = pd.DataFrame(d)
             st.session_state.df = pd.concat([st.session_state.df, df1], ignore_index=True)
             st.dataframe(st.session_state.df)
-            st.success("Ajouté à la liste !")
+            st.info("Ajouté à la liste !")
         detail_button_container = st.empty()
         detail_button_container2 = st.empty()
         if detail_button_container.button("Voir le détail", key="detail_button_418"):
@@ -1328,7 +1328,7 @@ if selected_menu=='Calcul GWP':
             df1 = pd.DataFrame(d)
             st.session_state.df = pd.concat([st.session_state.df, df1], ignore_index=True)
             st.dataframe(st.session_state.df)
-            st.success("Ajouté à la liste !")
+            st.info("Ajouté à la liste !")
         detail_button_container = st.empty()
         detail_button_container2 = st.empty()
         if detail_button_container.button("Voir le détail", key="detail_button_418"):
@@ -1407,7 +1407,7 @@ if selected_menu=='Calcul GWP':
             df1 = pd.DataFrame(d)
             st.session_state.df = pd.concat([st.session_state.df, df1], ignore_index=True)
             st.dataframe(st.session_state.df)
-            st.success("Ajouté à la liste !")
+            st.info("Ajouté à la liste !")
         detail_button_container = st.empty()
         detail_button_container2 = st.empty()
         if detail_button_container.button("Voir le détail", key="detail_button_418"):
@@ -1486,7 +1486,7 @@ if selected_menu=='Calcul GWP':
             df1 = pd.DataFrame(d)
             st.session_state.df = pd.concat([st.session_state.df, df1], ignore_index=True)
             st.dataframe(st.session_state.df)
-            st.success("Ajouté à la liste !")
+            st.info("Ajouté à la liste !")
         detail_button_container = st.empty()
         detail_button_container2 = st.empty()
         if detail_button_container.button("Voir le détail", key="detail_button_418"):
@@ -1561,7 +1561,7 @@ if selected_menu=='Calcul GWP':
             df1 = pd.DataFrame(d)
             st.session_state.df = pd.concat([st.session_state.df, df1], ignore_index=True)
             st.dataframe(st.session_state.df)
-            st.success("Ajouté à la liste !")
+            st.info("Ajouté à la liste !")
         detail_button_container = st.empty()
         detail_button_container2 = st.empty()
         if detail_button_container.button("Voir le détail", key="detail_button_418"):
@@ -1636,7 +1636,7 @@ if selected_menu=='Calcul GWP':
             }
             df1 = pd.DataFrame(d)
             st.session_state.df = pd.concat([st.session_state.df, df1], ignore_index=True)
-            st.success("Ajouté à la liste !")
+            st.info("Ajouté à la liste !")
 
 
         if not st.session_state.df.empty:
@@ -1683,5 +1683,3 @@ elif selected_menu == 'Total GWP':
             st.rerun()
     else:
         st.info("Aucun élément n'a été ajouté à la liste")
-
-        
